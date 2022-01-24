@@ -17,7 +17,7 @@ double* X(double x_l, double x_r, double* y_0, double* y_T, double* y_new,  doub
 double* solution(double a[10][10], int var, double *x);
 double norma(double* V, int dim);
 int main(void) {
-    FILE *file = fopen("/Users/kirill/CLionProjects/task_2/out_43/rk_out.txt", "w");
+    FILE *file = fopen("/Users/rk_out.txt", "w");
     double x_r = 1, x_l = 0.4, R,R0, R1;
     double *y_new = (double* ) malloc((nn) * sizeof(double));
     double *y_0 = (double* ) malloc((nn) * sizeof(double));
@@ -284,7 +284,7 @@ double* newton(double x_l, double x_r, double* y_0, double* y_T, double* y_new, 
     return alpha;
 }
 double* X(double x_l, double x_r, double* y_0, double* y_T, double* y_new,  double* X_tmp, double tol) {
-    FILE* file_hz = fopen("/Users/kirill/CLionProjects/task_2/out_43/hz.txt", "w");
+    FILE* file_hz = fopen("/Users/hz.txt", "w");
     X_tmp[0] = RK(file_hz, false, x_l, x_r, y_0, y_new, tol)[0] - y_T[0];
 
     return X_tmp;
